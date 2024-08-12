@@ -1,0 +1,43 @@
+<h1>Minha Primeira API to aqui com sono</h1>
+
+<button onclick="teste()">Pegar Dados</button>
+<div id="dados">aqui vem os dados</div>
+
+
+
+<script>
+  function pegarDados(){
+    let url = 'http://localhost:3000/api/dados'
+    debugger
+    // fetch(url)
+    // .then(response => response.json())
+    // .then(data => {
+    //   document.querySelector("div").innerText = JSON.stringify(data)    })
+      
+  }
+    
+  
+  
+</script>
+
+<script>
+    function teste() {
+    fetch('http://localhost:3000/api/dados', {
+        method: 'GET'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json(); // Converte a resposta para JSON
+    })
+    .then(data => {
+        document.getElementById('dados').innerText = JSON.stringify(data, null, 2); // Atualiza o conteúdo da div
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error); // Trata erros
+    });
+}
+
+
+</script>

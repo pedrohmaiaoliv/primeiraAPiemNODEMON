@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "id": "4587",
+      "nome": "Pedro",
+      "Email": "pedro@pedro"
+    }
+  ],
+  "pets": [],
+  "comida": []
+}
